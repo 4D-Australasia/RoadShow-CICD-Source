@@ -59,6 +59,5 @@ jobs:
     runs-on: [self-hosted]
 
     steps:
-      - run: mv /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024 /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024.4dbase
-      - run: ditto -c -k --sequesterRsrc --keepParent /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024.4dbase ../RoadShow2024.zip
+      - run: cd /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024  && zip -r ../RoadShow2024.zip .
       - run: mv /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024.zip /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Deploy/RoadShow2024.zip
