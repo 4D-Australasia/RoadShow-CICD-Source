@@ -10,8 +10,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: mkdir /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Data
-    - run: open -W /Applications/4Dv20R2/4D.app --args /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Project/Airport2023.4DProject --create-data /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Data/data.4DD --user-param "compile"
+    - run: mkdir -p /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data
+    - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
     - run: |
         compilationResult=`cat compilationResult.txt`
         echo $compilationResult
@@ -27,7 +27,7 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4Dv20R2/4D.app --args /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Project/Airport2023.4DProject --create-data /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Data/data.4DD --user-param "test"
+      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "test"
       - run: |
           UTestResult=`cat UTestResult.txt`
           echo $UTestResult
@@ -43,7 +43,7 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4Dv20R2/4D.app --args /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Project/Airport2023.4DProject --create-data /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023Summit/Data/data.4DD --user-param "build"
+      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "build"
       - run: |
           buildResult=`cat buildResult.txt`
           echo $buildResult
@@ -59,5 +59,6 @@ jobs:
     runs-on: [self-hosted]
 
     steps:
-      - run: cd /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023_Build/Compiled\ Database/Airport2023 && zip -r ../Airport2023Summit.zip .
-      - run: mv /Users/abdelhafidelhour/Desktop/Summit2023/actions-runner/_work/Airport2023Summit/Airport2023_Build/Compiled\ Database/Airport2023Summit.zip /Users/abdelhafidelhour/Desktop/ProductionServer/Airport2023Summit.zip
+      - run: mv /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Build/Compiled\ Database/RoadShow2024 /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Build/Compiled\ Database/RoadShow2024.4dbase
+      - run: ditto -c -k --sequesterRsrc --keepParent /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Build/Compiled\ Database/RoadShow2024.4dbase ../RoadShow2024.zip
+      - run: mv /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Build/Compiled\ Database/RoadShow2024.zip /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Deploy/RoadShow2024.zip
