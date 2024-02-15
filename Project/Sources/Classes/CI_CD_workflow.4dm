@@ -30,7 +30,7 @@ Function execute()
 	
 Function compile()
 	var $resultCompilationText : Text
-	
+	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"compilationResult.txt"
 	$options:=New object:C1471("targets"; New collection:C1472())
 	$resultCompilation:=Compile project:C1760($options)
 	If (Caps lock down:C547)
@@ -46,19 +46,24 @@ Function compile()
 				"Message: "+$error.message
 		End for each 
 	End if 
-	TEXT TO DOCUMENT:C1237("compilationResult.txt"; $resultCompilationText)
+	TEXT TO DOCUMENT:C1237($path; $resultCompilationText)
+	SHOW ON DISK:C922($path; *)
 	return $resultCompilation.success
 	
 Function test()
+	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"UTestResult.txt"
 	$resultText:=This:C1470.UTest.runAllTests().resultText()
-	TEXT TO DOCUMENT:C1237("UTestResult.txt"; $resultText)
+	TEXT TO DOCUMENT:C1237($path; $resultText)
+	SHOW ON DISK:C922($path; *)
 	return This:C1470.UTest.UTest_result.query("success == :1"; False:C215).length>0 ? False:C215 : True:C214
 	
 	
 Function build()
+	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"buildResult.txt"
 	$file:=File:C1566(Build application settings file:K5:60)
 	BUILD APPLICATION:C871($file.platformPath)
-	TEXT TO DOCUMENT:C1237("buildResult.txt"; OK=1 ? "build passed" : "build failed")
+	TEXT TO DOCUMENT:C1237($path; OK=1 ? "build passed" : "build failed")
+	SHOW ON DISK:C922($path; *)
 	return OK=1 ? True:C214 : False:C215
 	
 Function deploy()  //TEXT TO DOCUMENT("deployResult.txt"; "deploy passed")
