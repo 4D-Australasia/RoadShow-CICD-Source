@@ -1,6 +1,8 @@
 //%attributes = {}
 #DECLARE()
 
+//Mark: Wombat
+
 //MARK:-Initialize an instance of the search class
 /*
 If (Form.search=Null)
