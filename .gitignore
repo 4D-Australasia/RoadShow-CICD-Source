@@ -1,52 +1,29 @@
-# Prerequisites
-*.d
+# Data folder
+[dD][aA][tT][aA]/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Derived data
+DerivedData/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# Compiler files
+**/CompilerIntermediateFiles/*
 
-# Precompiled Headers
-*.gch
-*.pch
+# User preferences
+# userPreferences.*/
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Uncomment (remove the following # ) to ignore Trash
+# Project/Trash
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# System files
+.DS_Store
+ehthumbs.db
+Thumbs.db
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Thomas Maul Additions
+######################
+*symbols.txt
+*.4DIndy
+*.4DB
+*.4db
+*.4dd
+*.journal
+Folder_Reports
