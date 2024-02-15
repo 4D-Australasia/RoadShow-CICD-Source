@@ -47,14 +47,14 @@ Function compile()
 		End for each 
 	End if 
 	TEXT TO DOCUMENT:C1237($path; $resultCompilationText)
-	SHOW ON DISK:C922($path; *)
+	// SHOW ON DISK($path; *)
 	return $resultCompilation.success
 	
 Function test()
 	var $path:="UTestResult.txt"
 	$resultText:=This:C1470.UTest.runAllTests().resultText()
 	TEXT TO DOCUMENT:C1237($path; $resultText)
-	SHOW ON DISK:C922($path; *)
+	// SHOW ON DISK($path; *)
 	return This:C1470.UTest.UTest_result.query("success == :1"; False:C215).length>0 ? False:C215 : True:C214
 	
 	
@@ -63,7 +63,7 @@ Function build()
 	$file:=File:C1566(Build application settings file:K5:60)
 	BUILD APPLICATION:C871($file.platformPath)
 	TEXT TO DOCUMENT:C1237($path; OK=1 ? "build passed" : "build failed")
-	SHOW ON DISK:C922($path; *)
+	// SHOW ON DISK($path; *)
 	return OK=1 ? True:C214 : False:C215
 	
 Function deploy()  //TEXT TO DOCUMENT("deployResult.txt"; "deploy passed")

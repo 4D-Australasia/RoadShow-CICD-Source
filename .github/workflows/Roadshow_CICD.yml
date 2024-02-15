@@ -9,7 +9,7 @@ jobs:
     runs-on: [self-hosted]
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@main
     - run: mkdir -p /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data
     - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
     - run: |
