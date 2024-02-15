@@ -43,8 +43,8 @@ $0:=$stringyfiedAddress
 
 //*********************************
 
-C_OBJECT:C1216($1)
-C_TEXT:C284($0)
+//C_OBJECT($1)
+//C_TEXT($0)
 
 $address:=$1
 $stringyfiedAddress:=""
