@@ -30,7 +30,7 @@ Function execute()
 	
 Function compile()
 	var $resultCompilationText : Text
-	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"compilationResult.txt"
+	var $path:="compilationResult.txt"
 	$options:=New object:C1471("targets"; New collection:C1472())
 	$resultCompilation:=Compile project:C1760($options)
 	If (Caps lock down:C547)
@@ -51,7 +51,7 @@ Function compile()
 	return $resultCompilation.success
 	
 Function test()
-	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"UTestResult.txt"
+	var $path:="UTestResult.txt"
 	$resultText:=This:C1470.UTest.runAllTests().resultText()
 	TEXT TO DOCUMENT:C1237($path; $resultText)
 	SHOW ON DISK:C922($path; *)
@@ -59,7 +59,7 @@ Function test()
 	
 	
 Function build()
-	var $path:=Get 4D folder:C485(Logs folder:K5:19)+"buildResult.txt"
+	var $path:="buildResult.txt"
 	$file:=File:C1566(Build application settings file:K5:60)
 	BUILD APPLICATION:C871($file.platformPath)
 	TEXT TO DOCUMENT:C1237($path; OK=1 ? "build passed" : "build failed")

@@ -9,13 +9,13 @@ jobs:
     runs-on: [self-hosted]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
     - run: mkdir -p /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data
-    - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
+    - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
     - run: |
-        compilationResult='cat compilationResult.txt'
+        compilationResult=`cat compilationResult.txt`
         echo $compilationResult
-        headCompilation='head -n 1 compilationResult.txt'
+        headCompilation=`head -n 1 compilationResult.txt`
         rm compilationResult.txt
         if [ "$headCompilation" = "Syntax check failed" ]
         then
@@ -27,11 +27,11 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "test"
+      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "test"
       - run: |
-          UTestResult='cat UTestResult.txt'
+          UTestResult=`cat UTestResult.txt`
           echo $UTestResult
-          value='head -n 1 UTestResult.txt'
+          value=`head -n 1 UTestResult.txt`
           rm UTestResult.txt
           if [ "$value" = "Unit tests failed" ]
           then
@@ -43,11 +43,11 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "build"
+      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "build"
       - run: |
-          buildResult='cat buildResult.txt'
+          buildResult=`cat buildResult.txt`
           echo $buildResult
-          value='head -n 1 buildResult.txt'
+          value=`head -n 1 buildResult.txt`
           rm buildResult.txt
           if [ "$value" = "build failed" ]
           then
