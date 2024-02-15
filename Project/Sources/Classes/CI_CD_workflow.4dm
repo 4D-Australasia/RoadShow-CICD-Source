@@ -33,7 +33,9 @@ Function compile()
 	
 	$options:=New object:C1471("targets"; New collection:C1472())
 	$resultCompilation:=Compile project:C1760($options)
-	
+	If (Caps lock down:C547)
+		TRACE:C157
+	End if 
 	$resultCompilationText:=$resultCompilation.success ? "Syntax check passed" : "Syntax check failed"
 	If ($resultCompilation.success=False:C215)
 		$errors:=$resultCompilation.errors.query("isError == :1"; True:C214)
