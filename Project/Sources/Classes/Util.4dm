@@ -1,6 +1,6 @@
 Class constructor
 	
-Function factorial($value : Integer)
+Function xfactorial($value : Integer)
 	If ($value=0)
 		return 1
 	End if 
@@ -9,7 +9,7 @@ Function factorial($value : Integer)
 	
 	// Spot the deliberate mistake
 	
-Function zfactorial($value : Integer)
+Function factorial($value : Integer)
 	var $i; $result : Integer
 	
 	$result:=1
