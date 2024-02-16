@@ -5,8 +5,6 @@ Function xfactorial($value : Integer)
 		return 1
 	End if 
 	return $value*This:C1470.factorial($value-1)
-	
-	
 	// Spot the deliberate mistake
 	
 Function factorial($value : Integer)
