@@ -60,4 +60,5 @@ jobs:
 
     steps:
       - run: cd /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024  && zip -r ../RoadShow2024.zip .
+      - run: mkdir -p /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Deploy
       - run: mv /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/Build/Compiled\ Database/RoadShow2024.zip /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Deploy/RoadShow2024.zip
