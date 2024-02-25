@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - run: mkdir -p /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data
-    - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
+    - run: open -W /Applications/4D/Tool4D/tool4d.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "compile"
     - run: |
         compilationResult=`cat compilationResult.txt`
         echo $compilationResult
@@ -27,7 +27,7 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "test"
+      - run: open -W /Applications/4D/Tool4D/tool4d.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "test"
       - run: |
           UTestResult=`cat UTestResult.txt`
           echo $UTestResult
@@ -43,7 +43,7 @@ jobs:
     runs-on: [self-hosted]
 
     steps: 
-      - run: open -W /Applications/4D/20/4D_20_R4/4D.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "build"
+      - run: open -W /Applications/4D/Tool4D/tool4d.app --args /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/actions-runner/_work/RoadShow-CICD-Source/RoadShow-CICD-Source/Project/Roadshow_CICD.4DProject --create-data /Users/waynestewart/4D/Roadshow_2023-24/CI-CD/Runner/work/Data/data.4DD --user-param "build"
       - run: |
           buildResult=`cat buildResult.txt`
           echo $buildResult
