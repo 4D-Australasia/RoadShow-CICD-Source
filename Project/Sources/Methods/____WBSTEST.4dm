@@ -1,2 +1,2 @@
 //%attributes = {}
-ALERT:C41("Hello World")
+ALERT:C41("Hello ChristChurch")
