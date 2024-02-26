@@ -18,7 +18,7 @@ Function factorial($value : Integer)
 		$result*=$i
 	End for 
 	
-	return $value
+	return $result
 	
 	
 	// Fred
