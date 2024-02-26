@@ -8,6 +8,9 @@ Function isUserOwner($user : Object)
 Function canResetPassword($user : Object)->$cancel : Boolean
 	
 	Case of 
+			//: (True)
+			//$cancel:=True
+			
 		: ($user.isAdmin)
 			$cancel:=True:C214
 			
