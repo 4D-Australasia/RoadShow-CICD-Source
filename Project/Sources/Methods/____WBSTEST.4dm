@@ -1,7 +1,7 @@
 //%attributes = {}
 ALERT:C41("Hello Brisbane!!!!")
 
-// $es:=ds.wombat.all()
+$es:=ds:C1482.wombat.all()
 
 
 
